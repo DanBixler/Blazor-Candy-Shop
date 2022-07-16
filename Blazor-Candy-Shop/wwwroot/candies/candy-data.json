@@ -1,0 +1,26 @@
+[
+
+  {
+    "CandyId": 1,
+    "CategoryId": 1,
+    "Description": "Lorem ipsum",
+    "ImageThumbnailUrl": "\\Images\\thumbnails\\chocolateCandy-small.jpg",
+    "ImageUrl": "\\Images\\chocolateCandy.jpg",
+    "IsInStock": true,
+    "IsOnSale": false,
+    "Name": "Assorted Chocolate Candy",
+    "Price": 4.95
+  },
+  {
+    "CandyId": 2,
+    "CategoryId": 1,
+    "Description": "Venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin. Quisque egestas diam in arcu cursus. Sed viverra tellus in hac. Quis commodo odio aenean sed adipiscing diam donec adipiscing.",
+    "ImageThumbnailUrl": "\\Images\\thumbnails\\chocolateCandy2-small.jpg",
+    "ImageUrl": "\\Images\\chocolateCandy2.jpg",
+    "IsInStock": true,
+    "IsOnSale": false,
+    "Name": "Another Assorted Chocolate Candy",
+    "Price": 3.95
+  }
+ 
+]

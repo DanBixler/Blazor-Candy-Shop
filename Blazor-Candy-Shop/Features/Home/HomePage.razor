@@ -1,8 +1,45 @@
 ﻿@page "/"
 @inject HttpClient Http
 
+<PageTitle>Candy Shop</PageTitle>
+
 <h3>Candy Shop</h3>
 
-@code {
+@if (_candies == null) 
+{
+    <p>Loading candies...</p>
+}
+else
+{
+    <div class="grid">
+        @foreach (var candy in _candies)
+        {
+            <div class="card shadow" style="width: 18rem;">
+                <img src="@candy.ImageUrl" class="card-img-top" alt="@candy.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@candy.Name</h5>
+                    <h6 class="card-subtitle mb-3 text-muted">
+                        <span class="oi oi-map-marker"></span>
+                        @candy.Description
+                    </h6>
+                </div>
+            </div>
+        }
+    </div>
+}
 
+@code {
+    private IEnumerable<Candy>? _candies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _candies = await Http.GetFromJsonAsync<IEnumerable<Candy>>("candies/candy-data.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading candy data: {ex.Message}");
+        }
+    }
 }
